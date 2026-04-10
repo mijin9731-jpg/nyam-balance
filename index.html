@@ -43,6 +43,12 @@
                     <i class="fa-solid fa-blog"></i>
                     <span>블로그</span>
                 </a>
+                
+                <!-- Event Button -->
+                <button id="eventBtn" class="link-btn secondary-btn scale-effect shine-effect" style="border-color: var(--primary-color);">
+                    <i class="fa-solid fa-gift" style="color: var(--primary-color);"></i>
+                    <span>4월 이벤트</span>
+                </button>
             </section>
         </main>
         
@@ -50,5 +56,33 @@
             <p>&copy; 2024 냠냠밸런스. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="4event.jpg" alt="4월 이벤트" class="event-image">
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("eventModal");
+        const btn = document.getElementById("eventBtn");
+        const span = document.getElementsByClassName("close-btn")[0];
+
+        btn.onclick = function() {
+            modal.classList.add("show");
+        }
+
+        span.onclick = function() {
+            modal.classList.remove("show");
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove("show");
+            }
+        }
+    </script>
 </body>
 </html>
